@@ -8,7 +8,6 @@ job('NodeJS Docker example') {
     triggers {
         scm('H/5 * * * *')
     }
-
     steps {
         dockerBuildAndPublish {
             repositoryName('aaaaaaaaa/docker-nodejs-demo')
