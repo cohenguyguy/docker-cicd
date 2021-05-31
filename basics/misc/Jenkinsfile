@@ -16,6 +16,7 @@ node {
    stage('docker build/push') {
      docker.withRegistry('https://index.docker.io/v1/', 'dockerGuy') {
        def app = docker.build("guyc82/docker-nodejs-demo:${commit_id}", './basics').push()
+       def app_lts = docker.build("guyc82/docker-nodejs-demo:latest", './basics').push()
      }
    }
    stage('docker run') {
